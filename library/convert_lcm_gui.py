@@ -15,7 +15,7 @@ refresh_symbol = "\U0001f504"  # 🔄
 save_style_symbol = "\U0001f4be"  # 💾
 document_symbol = "\U0001F4C4"  # 📄
 
-PYTHON = "python3" if os.name == "posix" else "./venv/Scripts/python.exe"
+PYTHON = "python3" if os.name == "posix" else "./.venv/Scripts/python.exe"
 
 
 def convert_lcm(

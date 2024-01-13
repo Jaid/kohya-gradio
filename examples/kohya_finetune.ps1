@@ -62,7 +62,7 @@ elseif ($v2 -eq $null -and $v_model -eq $null -and ($substrings_v_model | Where-
 
 # activate venv
 cd $kohya_finetune_repo_path
-.\venv\Scripts\activate
+..\.venv\Scripts\activate
 
 # create caption json file
 if (!(Test-Path -Path $train_dir)) {

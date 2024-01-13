@@ -17,12 +17,12 @@ IF NOT EXIST venv (
 mkdir ".\logs\setup" > nul 2>&1
 
 :: Deactivate the virtual environment
-call .\venv\Scripts\deactivate.bat
+call ..\.venv\Scripts\deactivate.bat
 
 :: Calling external python program to check for local modules
 :: python .\setup\check_local_modules.py
 
-call .\venv\Scripts\activate.bat
+call ..\.venv\Scripts\activate.bat
 
 REM Check if the batch was started via double-click
 IF /i "%comspec% /c %~0 " equ "%cmdcmdline:"=%" (
@@ -34,4 +34,4 @@ IF /i "%comspec% /c %~0 " equ "%cmdcmdline:"=%" (
 )
 
 :: Deactivate the virtual environment
-call .\venv\Scripts\deactivate.bat
+call ..\.venv\Scripts\deactivate.bat

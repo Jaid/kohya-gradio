@@ -21,12 +21,12 @@ if ($env:VIRTUAL_ENV) {
 #     Write-Host -ForegroundColor Blue -Object "pip uninstall -y -r uninstall.txt"
 #     Write-Host -ForegroundColor Yellow -Object "============================================================="
 #     Write-Host " "
-# } 
+# }
 
 # Activate the virtual environment
 # Write-Host "Activating the virtual environment..."
-& .\venv\Scripts\activate
-$env:PATH += ";$($MyInvocation.MyCommand.Path)\venv\Lib\site-packages\torch\lib"
+& .\.venv\Scripts\activate
+$env:PATH += ";$($MyInvocation.MyCommand.Path)\.venv\Lib\site-packages\torch\lib"
 
 # Debug info about system
 # python.exe .\setup\debug_info.py

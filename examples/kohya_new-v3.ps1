@@ -21,7 +21,7 @@ $max_resolution = "768,576"
 $ErrorActionPreference = "Stop"
 
 # activate venv
-.\venv\Scripts\activate
+..\.venv\Scripts\activate
 
 # create caption json file
 python D:\kohya_ss\finetune\merge_captions_to_metadata.py `

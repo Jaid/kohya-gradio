@@ -39,7 +39,7 @@ $mts = [Math]::Ceiling($repeats / $train_batch_size * $epoch)
 Write-Output "Repeats: $repeats"
 
 cd D:\kohya_ss
-.\venv\Scripts\activate
+..\.venv\Scripts\activate
 
 accelerate launch --num_cpu_threads_per_process $num_cpu_threads_per_process train_db.py `
     --v2 `

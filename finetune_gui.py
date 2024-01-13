@@ -49,7 +49,7 @@ refresh_symbol = '\U0001f504'  # 🔄
 save_style_symbol = '\U0001f4be'  # 💾
 document_symbol = '\U0001F4C4'   # 📄
 
-PYTHON = 'python3' if os.name == 'posix' else './venv/Scripts/python.exe'
+PYTHON = 'python3' if os.name == 'posix' else './.venv/Scripts/python.exe'
 
 
 def save_configuration(
@@ -578,7 +578,7 @@ def train_model(
         run_cmd += f' --gradient_accumulation_steps={int(gradient_accumulation_steps)}'
     if not block_lr == '':
         run_cmd += f' --block_lr="{block_lr}"'
-    
+
     if not output_name == '':
         run_cmd += f' --output_name="{output_name}"'
     if int(max_token_length) > 75:
@@ -839,7 +839,7 @@ def finetune_tab(headless=False):
                         label='Weighted captions', value=False
                     )
         with gr.Tab('Parameters'):
-            
+
             def list_presets(path):
                 json_files = []
 
@@ -863,7 +863,7 @@ def finetune_tab(headless=False):
                 choices=list_presets('./presets/finetune'),
                 elem_id='myDropdown',
             )
-            
+
             with gr.Tab('Basic', elem_id='basic_tab'):
                 basic_training = BasicTraining(
                     learning_rate_value='1e-5', finetuning=True, sdxl_checkbox=source_model.sdxl_checkbox,

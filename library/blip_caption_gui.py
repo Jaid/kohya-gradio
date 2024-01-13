@@ -8,7 +8,7 @@ from library.custom_logging import setup_logging
 # Set up logging
 log = setup_logging()
 
-PYTHON = 'python3' if os.name == 'posix' else './venv/Scripts/python.exe'
+PYTHON = 'python3' if os.name == 'posix' else './.venv/Scripts/python.exe'
 
 
 def caption_images(

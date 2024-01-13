@@ -30,7 +30,7 @@ $mts = [Math]::Ceiling($repeats / $train_batch_size * $epoch)
 
 Write-Output "Repeats: $repeats"
 
-.\venv\Scripts\activate
+..\.venv\Scripts\activate
 
 accelerate launch --num_cpu_threads_per_process $num_cpu_threads_per_process train_db.py `
     --pretrained_model_name_or_path=$pretrained_model_name_or_path `
@@ -48,7 +48,7 @@ accelerate launch --num_cpu_threads_per_process $num_cpu_threads_per_process tra
     --fine_tuning `
     --dataset_repeats=$dataset_repeats `
     --save_precision="fp16"
-    
+
 # 2nd pass at half the dataset repeat value
 
 accelerate launch --num_cpu_threads_per_process $num_cpu_threads_per_process train_db.py `
@@ -67,7 +67,7 @@ accelerate launch --num_cpu_threads_per_process $num_cpu_threads_per_process tra
     --fine_tuning `
     --dataset_repeats=$([Math]::Ceiling($dataset_repeats/2)) `
     --save_precision="fp16"
-    
+
     accelerate launch --num_cpu_threads_per_process $num_cpu_threads_per_process train_db.py `
     --pretrained_model_name_or_path=$output_dir"\last.ckpt" `
     --train_data_dir=$data_dir `
@@ -84,4 +84,3 @@ accelerate launch --num_cpu_threads_per_process $num_cpu_threads_per_process tra
     --fine_tuning `
     --dataset_repeats=$dataset_repeats `
     --save_precision="fp16"
-    
