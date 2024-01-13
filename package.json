@@ -1,0 +1,21 @@
+{
+  "name": "kohya-gradio",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "source .venv/Scripts/activate && python setup/validate_requirements.py && python kohya_gui.py",
+    "makeVenv": "if [[ -d .venv ]]; then npm run resetVenv; fi && py -3.$npm_package_config_pythonMinor -m venv .venv && printf '*' > .venv/.gitignore && .venv/Scripts/python -m pip --require-virtualenv --disable-pip-version-check install --upgrade pip",
+    "installDependencies": ".venv/Scripts/pip install --require-virtualenv --disable-pip-version-check --requirement requirements_windows_torch2.txt --extra-index-url https://download.pytorch.org/whl/cu$npm_package_config_cudaVersion",
+    "resetVenv": "fse-cli rimraf .venv",
+    "build": "printf '%s\\n' 'Script behaviour not specified' >&2",
+    "test": "printf '%s\\n' 'Script behaviour not specified' >&2",
+    "env": "env",
+    "linkCheckpoint": "lnfs \"$npm_package_config_checkpointPath\" private/checkpoint.safetensors",
+    "linkVae": "lnfs \"$INVOKEAI_ROOT/models/sdxl/vae/sdxl-vae/sdxl_vae.safetensors\" private/vae.safetensors"
+  },
+  "config": {
+    "pythonMinor": 10,
+    "cudaVersion": 121,
+    "checkpointPath": "D:/invoke/food/xl/checkpoint/RealisMarkPlus (MarcosDesign)/RealisMark_Plus/RealisMarkPlus_(MarcosDesign)_RealisMark_Plus_fp32.safetensors"
+  }
+}
