@@ -1,9 +1,9 @@
 torch==2.1.2+cu121
 torchvision==0.16.2+cu121
-xformers==0.0.23.post1
-bitsandbytes==0.42.0
+xformers
+bitsandbytes
 tensorboard==2.14.1
 tensorflow[and-cuda]==2.14.0
-triton==
-tensorrt==
+triton
+tensorrt
 -r requirements.txt
